@@ -7,7 +7,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/favicon.png" type="image/png">
+  <style>
+    /* Banners para desktop */
+    .desktop-banner {
+      display: block;
+    }
 
+    /* Banners para mobile */
+    .mobile-banner {
+      display: none;
+    }
+
+    /* Ajusta os banners para telas pequenas (mobile) */
+    @media (max-width: 768px) {
+      .desktop-banner {
+        display: none;
+      }
+
+      .mobile-banner {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="hero">
@@ -15,37 +36,53 @@
     <div class="logo-container">
       <img src="img/logo.png" alt="Logo Joel Jota" class="logo" />
       <div class="social-icons">
-        <a href="https://www.instagram.com/k2business"><img src="img/instagram.png" alt="Instagram" /></a>
-        <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQHQA82lMWYTywAAAZfsCZ8Yx9ntQEYNRgWkbDDwVqGhZKiRm9CPPGLRqtoqp_OnB1t3EXgo8Azzxnz8pFQrm4DcA-_TYX6hCSd7IVSqTPFoWpnbyCK4zNcsinYyavDkhpjfXU0=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fk2-jornada-profissional-557723164%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app"><img src="img/linkedin.png" alt="LinkedIn" /></a>
-        <a href="https://wa.me/5513988241825"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+        <a href="#"><img src="img/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="img/linkedin.png" alt="LinkedIn" /></a>
+        <a href="#"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
       </div>
     </div>
 
     <div class="arrow">Clique e acesse ↓</div>
   </div>
 
- <div class="banners">
-  <a href="https://expertise.k2business.com.br/" target="_blank">
-    <img src="img/banner.png" alt="Banner 1" />
-  </a>
-  <a href="https://liderespecialista.k2business.com.br/" target="_blank">
-    <img src="img/banner2.png" alt="Banner 2" />
-  </a>
-  <a href="https://clienteoculto.k2business.com.br/" target="_blank">
-    <img src="img/banner3.png" alt="Banner 3" />
-  </a>
-  <a href="https://incompany.k2business.com.br/" target="_blank">
-    <img src="img/banner4.png" alt="Banner 4" />
-  </a>
-  <a href="https://embreve.k2business.com.br/" target="_blank">
-    <img src="img/banner5.png" alt="Banner 5" />
-  </a>
-</div>
+  <div class="banners">
+    <!-- Banners para desktop -->
+    <a href="https://expertise.k2business.com.br/" target="_blank" class="desktop-banner">
+      <img src="img/banner.png" alt="Banner 1" />
+    </a>
+    <a href="https://liderespecialista.k2business.com.br/" target="_blank" class="desktop-banner">
+      <img src="img/banner2.png" alt="Banner 2" />
+    </a>
+    <a href="https://clienteoculto.k2business.com.br/" target="_blank" class="desktop-banner">
+      <img src="img/banner3.png" alt="Banner 3" />
+    </a>
+    <a href="https://incompany.k2business.com.br/" target="_blank" class="desktop-banner">
+      <img src="img/banner4.png" alt="Banner 4" />
+    </a>
+    <a href="https://embreve.k2business.com.br/" target="_blank" class="desktop-banner">
+      <img src="img/banner5.png" alt="Banner 5" />
+    </a>
 
+    <!-- Banners para mobile -->
+    <a href="https://expertise.k2business.com.br/" target="_blank" class="mobile-banner">
+      <img src="img/banner1.png" alt="Banner 1 Mobile" />
+    </a>
+    <a href="https://liderespecialista.k2business.com.br/" target="_blank" class="mobile-banner">
+      <img src="img/banner22.png" alt="Banner 2 Mobile" />
+    </a>
+    <a href="https://clienteoculto.k2business.com.br/" target="_blank" class="mobile-banner">
+      <img src="img/banner33.png" alt="Banner 3 Mobile" />
+    </a>
+    <a href="https://incompany.k2business.com.br/" target="_blank" class="mobile-banner">
+      <img src="img/banner44.png" alt="Banner 4 Mobile" />
+    </a>
+    <a href="https://embreve.k2business.com.br/" target="_blank" class="mobile-banner">
+      <img src="img/banner55.png" alt="Banner 5 Mobile" />
+    </a>
+  </div>
 
   <footer>
     © Copyright 2025 K2 Business. Todos os direitos reservados. <br />
-   
   </footer>
 </body>
 </html>
