@@ -7,91 +7,140 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/favicon.png" type="image/png">
+
   <style>
-    /* Banners para desktop */
-    .desktop-banner {
-      display: block;
-    }
-
-    /* Banners para mobile */
-    .mobile-banner {
-      display: none;
-    }
-
-    /* Ajusta os banners para telas pequenas (mobile) */
+    /* ===================== BANNERS ===================== */
+    .desktop-banner { display: block; }
+    .mobile-banner { display: none; }
     @media (max-width: 768px) {
-      .desktop-banner {
-        display: none;
-      }
+      .desktop-banner { display: none; }
+      .mobile-banner { display: block; }
+    }
 
-      .mobile-banner {
-        display: block;
-      }
+    /* ===================== LOADER (AZUL ESCURO + DOURADO) ===================== */
+    :root{
+      --logo-size: 140px;       /* tamanho da logo no loader */
+      --bar-extra: 40px;        /* largura extra da barra */
+      --bar-height: 6px;        /* altura da barra */
+      --bar-color: #d4af37;     /* dourado suave */
+    }
+    .loader-wrap{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: #0a1f44; /* azul escuro suave */
+      transition: opacity .6s ease;
+    }
+    .loader-inner{
+      text-align: center;
+      width: fit-content;
+      font-family: 'Montserrat', sans-serif;
+      animation: fadeIn .8s ease-out forwards;
+    }
+    .loader-logo img{
+      width: var(--logo-size);
+      height: var(--logo-size);
+      object-fit: contain;
+      animation: fadeIn 1s ease-out forwards;
+    }
+    .loader-bar{
+      position: relative;
+      width: calc(var(--logo-size) + var(--bar-extra));
+      height: var(--bar-height);
+      margin: 18px auto 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,.2); /* barra de fundo clara */
+      overflow: hidden;
+    }
+    .loader-fill{
+      position: absolute;
+      inset: 0;
+      background: var(--bar-color);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: fillLtoR 2.5s ease forwards;
+    }
+    .loader-text{
+      margin-top: 10px;
+      color: #fff; /* texto branco */
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+    body.loading > *:not(#loader){ display: none; }
+
+    @keyframes fillLtoR{
+      0%   { transform: scaleX(0); }
+      100% { transform: scaleX(1); }
+    }
+    @keyframes fadeIn{
+      from{ opacity: 0; transform: translateY(6px); }
+      to{ opacity: 1; transform: translateY(0); }
+    }
+    .loader-wrap.fade-out{
+      opacity: 0;
+      pointer-events: none;
     }
   </style>
 </head>
-<body>
+
+<body class="loading">
+  <!-- ========== LOADER ========== -->
+  <div id="loader" class="loader-wrap">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <img src="img/logo.png" alt="Logo K2 Business" />
+      </div>
+      <div class="loader-bar">
+        <span class="loader-fill"></span>
+      </div>
+      <p class="loader-text">Carregando...</p>
+    </div>
+  </div>
+  <!-- ========== FIM LOADER ========== -->
+
+  <!-- ========== SEU CONTEÚDO ORIGINAL ========== -->
   <div class="hero">
-    <!-- NOVA ESTRUTURA: Logo e ícones sociais -->
     <div class="logo-container">
-      <img src="img/logo.png" alt="Logo Joel Jota" class="logo" />
+      <img src="img/logo.png" alt="Logo" class="logo" />
+      <br><br>
       <div class="social-icons">
-        <a href="#"><img src="img/instagram.png" alt="Instagram" /></a>
-        <a href="#"><img src="img/linkedin.png" alt="LinkedIn" /></a>
-        <a href="#"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+        <a href="https://www.instagram.com/jacksonoliveiracoach/"><img src="img/instagram.png" alt="Instagram" /></a>
+        <a href="https://wa.me/557599556432"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
       </div>
     </div>
-
     <div class="arrow">Clique e acesse ↓</div>
   </div>
 
   <div class="banners">
-    <!-- Banners para desktop -->
-     <a href="https://expertise.k2business.com.br/" target="_blank" class="desktop-banner">
-      <img src="img/banner.png" alt="Banner 1" />
-    </a>
+    <a href="" target="_blank" class="desktop-banner"><img src="img/banner.png" alt="Banner 1" /></a>
+    <a href="" target="_blank" class="desktop-banner"><img src="img/banner2.png" alt="Banner 2" /></a>
+    <a href="" target="_blank" class="desktop-banner"><img src="img/banner3.png" alt="Banner 3" /></a>
+    <a href="" target="_blank" class="desktop-banner"><img src="img/banner4.png" alt="Banner 4" /></a>
+    <a href="" target="_blank" class="desktop-banner"><img src="img/banner5.png" alt="Banner 5" /></a>
 
-<a href="https://expertise.k2business.com.br/" target="_blank" class="mobile-banner">
-      <img src="img/banner1.png" alt="Banner 1 Mobile" />
-    </a>
-
-        <a href="https://incompany.k2business.com.br/" target="_blank" class="desktop-banner">
-      <img src="img/banner4.png" alt="Banner 4" />
-    </a>
-    
-    <a href="https://liderespecialista.k2business.com.br/" target="_blank" class="desktop-banner">
-      <img src="img/banner2.png" alt="Banner 2" />
-    </a>
-    <a href="https://clienteoculto.k2business.com.br/" target="_blank" class="desktop-banner">
-      <img src="img/banner3.png" alt="Banner 3" />
-    </a>
-
-    <a href="https://embreve.k2business.com.br/" target="_blank" class="desktop-banner">
-      <img src="img/banner5.png" alt="Banner 5" />
-    </a>
-
-    <!-- Banners para mobile -->
-  
-
-     <a href="https://incompany.k2business.com.br/" target="_blank" class="mobile-banner">
-      <img src="img/banner44.png" alt="Banner 4 Mobile" />
-    </a>
-    <a href="https://liderespecialista.k2business.com.br/" target="_blank" class="mobile-banner">
-      <img src="img/banner22.png" alt="Banner 2 Mobile" />
-    </a>
-    <a href="https://clienteoculto.k2business.com.br/" target="_blank" class="mobile-banner">
-      <img src="img/banner33.png" alt="Banner 3 Mobile" />
-    </a>
-   
-    <a href="https://embreve.k2business.com.br/" target="_blank" class="mobile-banner">
-      <img src="img/banner55.png" alt="Banner 5 Mobile" />
-    </a>
+    <a href="" target="_blank" class="mobile-banner"><img src="img/banner1.png" alt="Banner 1 Mobile" /></a>
+    <a href="" target="_blank" class="mobile-banner"><img src="img/banner22.png" alt="Banner 2 Mobile" /></a>
+    <a href="" target="_blank" class="mobile-banner"><img src="img/banner33.png" alt="Banner 3 Mobile" /></a>
+    <a href="" target="_blank" class="mobile-banner"><img src="img/banner44.png" alt="Banner 4 Mobile" /></a>
+    <a href="" target="_blank" class="mobile-banner"><img src="img/banner55.png" alt="Banner 5 Mobile" /></a>
   </div>
 
   <footer>
     © Copyright 2025 K2 Business. Todos os direitos reservados. <br />
   </footer>
+  <!-- ========== FIM DO CONTEÚDO ========== -->
+
+  <script>
+    // Quando a página terminar de carregar
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        document.body.classList.remove('loading');
+        setTimeout(() => loader.remove(), 600);
+      }, 2600); // tempo para a barra preencher
+    });
+  </script>
 </body>
 </html>
-
-
